@@ -8,6 +8,7 @@
 '''
 
 import os
+import math
 import sys
 import re
 import time
@@ -111,7 +112,29 @@ def main():
             'svdy': svdElement[1]
         })
     jsondata = json.dumps(jsondict2, indent=2)
-    print(jsondata)
+    #print(jsondata)
+
+#     def r(x):
+#         return x.replace('"', ' ')
+#     print('graph G {')
+#     for j1 in jsondict2:
+#         s = []
+#         for key, value in j1['numdict'].items():
+#             s.append(r(key) + ': ' + r(j1['infodict'][key]))
+#         s = ' | '.join(s)
+#         label = 'label = "' + s + '"'
+#         print('"' + r(j1['name']) + '" [ ' + label + ', shape = record ];')
+#         for j2 in jsondict2:
+#             if j1 != j2:
+#                 dist = 0
+#                 for key, value in j1['scalednumdict'].items():
+#                     if key in j2['scalednumdict']:
+#                         dist += (value - j2['scalednumdict'][key]) ** 2
+#                 dist = math.sqrt(dist)
+#                 #print(dist)
+#                 if dist < 0.1:
+#                     print('"' + r(j1['name']) + '"', '--', '"' + r(j2['name']) + '"', ';')
+#     print('}')
 
     #print(vectors)
     #kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
